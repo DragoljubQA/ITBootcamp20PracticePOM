@@ -52,6 +52,16 @@ public class LoginTestBeta extends BaseTestBeta {
     }
 
     @Test
+    public void userCannotLogInWithInvalidPassword() {
+        homepagePageBeta.clickOnPracticeButton();
+        practicePageBeta.clickOnTestLoginPageButton();
+        loginPageBeta.inputUsername("student");
+        loginPageBeta.inputPassword("123");
+        loginPageBeta.clickOnSubmitButton();
+        Assert.assertTrue(loginPageBeta.submitButton.isDisplayed());
+    }
+
+    @Test
     public void userCanLogOut() {
         homepagePageBeta.clickOnPracticeButton();
         practicePageBeta.clickOnTestLoginPageButton();
