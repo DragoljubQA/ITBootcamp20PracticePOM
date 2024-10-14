@@ -51,4 +51,15 @@ public class LoginTestBeta extends BaseTestBeta {
         Assert.assertTrue(loginPageBeta.submitButton.isDisplayed());
     }
 
+    @Test
+    public void userCanLogOut() {
+        homepagePageBeta.clickOnPracticeButton();
+        practicePageBeta.clickOnTestLoginPageButton();
+        loginPageBeta.inputUsername("student");
+        loginPageBeta.inputPassword("Password123");
+        loginPageBeta.clickOnSubmitButton();
+        profilePageBeta.clickOnLogOutButton();
+        Assert.assertTrue(loginPageBeta.submitButton.isDisplayed());
+    }
+
 }
